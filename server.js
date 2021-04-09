@@ -10,6 +10,8 @@ const expressLayouts = require("express-ejs-layouts");
 
 const index = require("./routes/index.js");
 
+const authorRoutes = require("./routes/authors.js");
+
 const connectDB = async () => {
   try {
     await mongoose.connect(process.env.DATABASE_URI, {
@@ -45,5 +47,6 @@ const mongoose = require("mongoose");
 connectDB();
 
 app.use("/", index);
+app.use("/authors", authorRoutes);
 
 app.listen(process.env.PORT || 3000);
