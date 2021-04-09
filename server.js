@@ -8,6 +8,7 @@ const app = express();
 
 const expressLayouts = require("express-ejs-layouts");
 
+const bodyParser = require("body-parser");
 const index = require("./routes/index.js");
 
 const authorRoutes = require("./routes/authors.js");
@@ -41,6 +42,8 @@ app.set("layout", "layouts/layouts");
 app.use(expressLayouts);
 
 app.use(express.static("public"));
+
+app.use(bodyParser.urlencoded({ limit: "10mb", extended: false }));
 
 const mongoose = require("mongoose");
 

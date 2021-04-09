@@ -6,10 +6,9 @@
     <title>Document</title>
   </head>
   <body>
-    Before
     <br />
-    <%- body %>
+    <%- include('../partials/header.ejs')%> <%-
+    include('../authors/_err_message') %> <%- body %>
     <br />
-    After
   </body>
 </html>
